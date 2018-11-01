@@ -1,10 +1,22 @@
 class OrgsController < ApplicationController
     
+    def show
+        @org = Org.find(params[:id])
+    end
+    
     def new
         
     end
     
     def create
-        render plain: params[:orgs].inspect
+        @org = Org.new(org_params)
+        
+        @org.save
+        redirect_to @org
     end
 end
+
+private
+ def org_params
+     params.require(:orgs).permit(:name, :description, :contact)
+ end
