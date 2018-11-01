@@ -1,0 +1,18 @@
+<h1>List of Orgs</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Contact</th>
+    </tr>
+    
+    <% @orgs.each do |org| %>
+        <tr>
+            <td><%= org.name %></td>
+            <td><%= org.description %></td>
+            <td><%= org.contact %></td>
+            <td><%= link_to 'Show', org_path(org) %></td>
+        </tr>
+    <% end %>
+</table>
