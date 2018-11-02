@@ -1,3 +1,31 @@
-<h1>Rate My Niner Org</h1>
-<%= link_to 'List of Orgs', controller: 'orgs' %>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans+Narrow" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<div class="body-container"> 
+    <!--Logo-->
+    <div class="resize is-centered">
+        <img id="logo" src="https://advancement.uncc.edu/sites/advancement.uncc.edu/files/media/unc-charlotte-logo.gif" alt="uncc logo" />
+    </div>
+    
+    <!--Header-->
+    <div class="is-centered title"> 
+        <h1>Rate My Niner Org</h1>
+    </div>
+    
+    <!--Search bar-->
+    <form class="example" action="action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    
+    <!--List of orgs-->
+    <div class="is-centered full-list"> 
+        <%= link_to 'List of Orgs', controller: 'orgs' %>
+    </div>
+    
+    <footer>
+        <div class="foot-container">
+            <p>RUBY WARRIORS Copyright © 2018. UNC CHARLOTTE</p>
+        </div>
+    </footer>
+</div>

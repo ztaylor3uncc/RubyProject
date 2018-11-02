@@ -1,3 +1,113 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.title {
+    font-family: 'Open Sans', sans-serif;
+    color: #006338;
+    font-size: 30px;
+}
+
+h1 {
+    margin-top: 15px;
+    margin: 15px;
+}
+
+.is-centered {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+body {
+    background-color: #D3D3D3;
+    height: 100%;
+    margin: 0;
+}
+
+.body-container {
+    background-color: white;
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#logo {
+    padding-top: 15vh;
+    height: 120px;
+    width: 250px;
+}
+
+.full-list {
+    font-size: 25px;
+    padding-top: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #1E90FF;
+}
+
+a:hover {
+    color: #6699CC;
+}
+
+.example {
+    justify-content: center;
+    display: flex;
+    box-sizing: border-box;
+}
+
+//search field
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 40%;
+    background: #f1f1f1;
+}
+
+//submit button 
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #0b7dda;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+footer {
+    border-top: 1px solid #D3D3D3;
+    background-color: white;
+    width: 90%;
+    text-align: center;
+    bottom: 0;
+    position: absolute;
+}
+
+.foot-container {
+    padding-top: 5px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+p {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 15px;
+}
