@@ -45,11 +45,13 @@ body {
 
 a {
     text-decoration: none;
-    color: #1E90FF;
+    color: #B9975B;
+    opacity: 1;
+    font-family: 'Open Sans', sans-serif;
 }
 
 a:hover {
-    color: #6699CC;
+    opacity: .7;
 }
 
 .example {

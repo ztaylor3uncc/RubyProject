@@ -1,3 +1,60 @@
 // Place all the styles related to the Orgs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.title {
+    font-family: 'Open Sans', sans-serif;
+    color: #006338;
+    font-size: 25px;
+}
+
+#header1 {
+    margin: 50px 15px 25px 15px;
+}
+
+.is-centered {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+body {
+    background-color: #D3D3D3;
+    height: 100%;
+    margin: 0;
+}
+
+.body-container {
+    background-color: white;
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+}
+
+th {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-family: 'Open Sans', sans-serif;
+    color: #B9975B;;
+}
+
+footer {
+    border-top: 1px solid #D3D3D3;
+    background-color: white;
+    width: 90%;
+    text-align: center;
+    bottom: 0;
+    position: absolute;
+}
+
+.foot-container {
+    padding-top: 5px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+p {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 15px;
+}
