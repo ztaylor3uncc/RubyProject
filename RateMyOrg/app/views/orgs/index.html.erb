@@ -12,6 +12,7 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Contact</th>
+                <th>Rating</th>
             </tr>
             
             <% @orgs.each do |org| %>
@@ -19,6 +20,7 @@
                     <td><%= org.name %></td>
                     <td><%= org.description %></td>
                     <td><%= org.contact %></td>
+                    <td><%= org.rating %></td>
                     <td><%= link_to 'Show', org_path(org) %></td>
                 </tr>
             <% end %>
