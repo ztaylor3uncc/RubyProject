@@ -20,10 +20,8 @@
                     <td><%= org.name %></td>
                     <td><%= org.description %></td>
                     <td><%= org.contact %></td>
-<<<<<<< HEAD
-=======
+                    <td>"Rating"</td>
                     
->>>>>>> 28d721e538db9624f1501d7a65adaeb6916eabe1
                     <td><%= link_to 'Show', org_path(org) %></td>
                     <td><%= link_to 'Edit', edit_org_path(org) %></td>
                     <td><%= link_to 'Destroy',
@@ -36,6 +34,7 @@
     </div>
     
     <footer>
+        <%= link_to 'Add New Org', new_org_path %>
         <div class="foot-container">
             <p>RUBY WARRIORS Copyright © 2018. UNC CHARLOTTE</p>
         </div>
