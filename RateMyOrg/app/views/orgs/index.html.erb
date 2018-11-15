@@ -20,10 +20,13 @@
                     <td><%= org.name %></td>
                     <td><%= org.description %></td>
                     <td><%= org.contact %></td>
-                    <!--<td><%= org.rating %></td>-->
+                    
                     <td><%= link_to 'Show', org_path(org) %></td>
                     <td><%= link_to 'Edit', edit_org_path(org) %></td>
-                    <td><%= link_to 'Destroy' %></td>
+                    <td><%= link_to 'Destroy',
+                                    org_path(org),
+                                    method: :delete,
+                                    data: { confirm: 'Are you sure?' } %></td>
                 </tr>
             <% end %>
         </table>

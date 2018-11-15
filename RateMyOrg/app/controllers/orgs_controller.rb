@@ -18,6 +18,13 @@ class OrgsController < ApplicationController
         @org.save
         redirect_to @org
     end
+    
+    def destroy
+        @org = Org.find(params[:id])
+        @org.destroy
+        
+        redirect_to orgs_path
+    end
 end
 
 private
