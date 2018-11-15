@@ -25,6 +25,19 @@ class OrgsController < ApplicationController
         
         redirect_to orgs_path
     end
+    
+    def edit
+        @org = Org.find(params[:id])
+    end
+    
+    # def update
+    #     @org = Org.find(params[:id])
+    #     if @org.update(org_params)
+    #         redirect_to @org
+    #     else
+    #         render 'edit'
+    #     end
+    # end
 end
 
 private

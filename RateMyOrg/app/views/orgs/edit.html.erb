@@ -1,0 +1,41 @@
+<h1>Editing article</h1>
+ 
+<%= form_for @org do |f| %>
+ 
+  <% if @org.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@org.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @org.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+    
+  </p>
+ 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+  
+  <p>
+    <%= f.label :contact %><br>
+    <%= f.text_field :contact %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', orgs_path %>
