@@ -30,17 +30,23 @@ class OrgsController < ApplicationController
         @org = Org.find(params[:id])
     end
     
-    # def update
-    #     @org = Org.find(params[:id])
-    #     if @org.update(org_params)
-    #         redirect_to @org
-    #     else
-    #         render 'edit'
-    #     end
-    # end
+    def update
+        @org = Org.find(params[:id])
+        
+        if @org.update(org_param)
+            redirect_to @org
+        else
+            render 'edit'
+        end
+        
+    end
 end
 
 private
  def org_params
      params.require(:orgs).permit(:name, :description, :contact)
+ end
+ 
+ def org_param
+     params.require(:org).permit(:name, :description, :contact)
  end
