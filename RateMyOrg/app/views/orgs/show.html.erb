@@ -13,6 +13,26 @@
     <%= @org.contact %>
 </p>
 
+<h2>Comments:</h2>
+<% @org.comments.each do |comment| %>
+  <p>
+      <strong>Comment:</strong>
+      <%= comment.body %>
+  </p>
+<% end %>
+
+<h2>Add A Comment:</h2>
+<%= form_for([@org, @org.comments.build]) do |f| %>
+  <p>
+      <%= f.label :body %>
+      <%= f.text_field :body %>
+  </p>
+  
+  <p>
+      <%= f.submit %>
+  </p>
+  
+<% end %>
 <p>
     <%= link_to 'Back', orgs_path %>
 </p>
