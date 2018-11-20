@@ -9,6 +9,13 @@ class CommentsController < ApplicationController
         redirect_to org_path(@org)
     end
     
+    def destroy
+        @org = Org.find(params[:org_id])
+        @comment = @org.comments.find(params[:id])
+        @comment.destroy
+        redirect_to org_path(@org)
+    end
+    
     private
         def comment_params
             params.require(:comment).permit(:body)

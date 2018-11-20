@@ -16,8 +16,11 @@
 <h2>Comments:</h2>
 <% @org.comments.each do |comment| %>
   <p>
-      <strong>Comment:</strong>
+      <strong>Anonymous:</strong>
       <%= comment.body %>
+      <%= link_to 'Destroy', [comment.org, comment],
+                            method: :delete,
+                            data: { confirm: 'Are you sure?' } %>
   </p>
 <% end %>
 
