@@ -1,41 +1,49 @@
-<h1>Editing article</h1>
- 
-<%= form_for @org do |f| %>
- 
-  <% if @org.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@org.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @org.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-    
-  </p>
- 
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </p>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans+Narrow" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="body-container"> 
+  <div class="is-centered title">
+    <h1 id="header1">Editing Organization</h1>
+  </div>
   
-  <p>
-    <%= f.label :contact %><br>
-    <%= f.text_field :contact %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
- 
-<% end %>
- 
-<%= link_to 'Back', orgs_path %>
+  <%= form_for @org do |f| %>
+   
+    <% if @org.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@org.errors.count, "error") %> prohibited
+          this article from being saved:
+        </h2>
+        <ul>
+          <% @org.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+   
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+      
+    </p>
+   
+    <p>
+      <%= f.label :description %><br>
+      <%= f.text_field :description %>
+    </p>
+    
+    <p>
+      <%= f.label :contact %><br>
+      <%= f.text_field :contact %>
+    </p>
+   
+    <p>
+      <%= f.submit %>
+    </p>
+   
+  <% end %>
+   
+  <%= link_to 'Back', orgs_path %>
+
+</div>

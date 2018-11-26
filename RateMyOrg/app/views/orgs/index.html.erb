@@ -3,7 +3,7 @@
 
 <div class="body-container"> 
     <div class="is-centered title">
-        <h1 id="header1">List of Orgs</h1>
+        <h1 id="header1">Organizations</h1>
     </div>
 
     <div class="is-centered">
@@ -32,9 +32,15 @@
             <% end %>
         </table>
     </div>
+    <br>
+    <table>
+        <div class="is-centered">
+            <%= link_to 'Add Organization', new_org_path %>
+        </div>
+    </table>
     
     <footer>
-        <%= link_to 'Add New Org', new_org_path %>
+        
         <div class="foot-container">
             <p>RUBY WARRIORS Copyright © 2018. UNC CHARLOTTE</p>
         </div>

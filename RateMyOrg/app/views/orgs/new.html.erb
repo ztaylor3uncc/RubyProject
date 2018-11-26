@@ -1,22 +1,31 @@
-<h1>New Org</h1>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans+Narrow" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<%= form_for :orgs, url: orgs_path do |f| %>
-    <p>
-        <%= f.label :name %><br>
-        <%= f.text_field :name %>
-    </p>
+<div class="body-container"> 
+    <div class="is-centered title">
+        <h1 id="header1">Adding Organization</h1>
+    </div>
     
-    <p>
-        <%= f.label :description %><br>
-        <%= f.text_field :description %>
-    </p>
-    
-    <p>
-        <%= f.label :contact %><br>
-        <%= f.text_field :contact %>
-    </p>
-    
-    <p>
-        <%= f.submit %>
-    </p>
-<% end %>
+    <%= form_for :orgs, url: orgs_path do |f| %>
+        <p>
+            <div class="label-heads">
+                <%= f.label :name %><br>
+            </div>
+            <%= f.text_field :name %>
+        </p>
+        
+        <p>
+            <%= f.label :description %><br>
+            <%= f.text_field :description %>
+        </p>
+        
+        <p>
+            <%= f.label :contact %><br>
+            <%= f.text_field :contact %>
+        </p>
+        
+        <p>
+            <%= f.submit %>
+        </p>
+    <% end %>
+</div>

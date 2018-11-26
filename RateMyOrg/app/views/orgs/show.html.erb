@@ -1,41 +1,49 @@
-<p>
-    <strong>Name:</strong>
-    <%= @org.name %>
-</p>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans+Narrow" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<p>
-    <strong>Description:</strong>
-    <%= @org.description %>
-</p>
-
-<p>
-    <strong>Contact:</strong>
-    <%= @org.contact %>
-</p>
-
-<h2>Comments:</h2>
-<% @org.comments.each do |comment| %>
-  <p>
-      <strong>Anonymous:</strong>
-      <%= comment.body %>
-      <%= link_to 'Destroy', [comment.org, comment],
-                            method: :delete,
-                            data: { confirm: 'Are you sure?' } %>
-  </p>
-<% end %>
-
-<h2>Add A Comment:</h2>
-<%= form_for([@org, @org.comments.build]) do |f| %>
-  <p>
-      <%= f.label :body %>
-      <%= f.text_field :body %>
-  </p>
-  
-  <p>
-      <%= f.submit %>
-  </p>
-  
-<% end %>
-<p>
-    <%= link_to 'Back', orgs_path %>
-</p>
+<div class="body-container"> 
+    <div class="is-centered title">
+        <h1 id="header1">Organization Details</h1>
+    </div>
+    <p>
+        <strong>Name:</strong>
+        <%= @org.name %>
+    </p>
+    
+    <p>
+        <strong>Description:</strong>
+        <%= @org.description %>
+    </p>
+    
+    <p>
+        <strong>Contact:</strong>
+        <%= @org.contact %>
+    </p>
+    
+    <h2>Comments:</h2>
+    <% @org.comments.each do |comment| %>
+      <p>
+          <strong>Anonymous:</strong>
+          <%= comment.body %>
+          <%= link_to 'Destroy', [comment.org, comment],
+                                method: :delete,
+                                data: { confirm: 'Are you sure?' } %>
+      </p>
+    <% end %>
+    
+    <h2>Add A Comment:</h2>
+    <%= form_for([@org, @org.comments.build]) do |f| %>
+      <p>
+          <%= f.label :body %>
+          <%= f.text_field :body %>
+      </p>
+      
+      <p>
+          <%= f.submit %>
+      </p>
+      
+    <% end %>
+    <p>
+        <%= link_to 'Back', orgs_path %>
+    </p>
+</div>
