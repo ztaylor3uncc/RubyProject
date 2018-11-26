@@ -6,17 +6,23 @@
         <h1 id="header1">Organization Details</h1>
     </div>
     <p>
-        <strong>Name:</strong>
+        <div class="label-heads">
+            <strong>Name:</strong>
+        </div>
         <%= @org.name %>
     </p>
     
     <p>
-        <strong>Description:</strong>
+        <div class="label-heads">
+            <strong>Description:</strong>
+        </div>
         <%= @org.description %>
     </p>
     
     <p>
-        <strong>Contact:</strong>
+        <div class="label-heads">
+            <strong>Contact:</strong>
+        </div>
         <%= @org.contact %>
     </p>
     
@@ -34,7 +40,9 @@
     <h2>Add A Comment:</h2>
     <%= form_for([@org, @org.comments.build]) do |f| %>
       <p>
-          <%= f.label :body %>
+          <div class="label-heads">
+              <%= f.label :body %>
+          </div>
           <%= f.text_field :body %>
       </p>
       
