@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   resources :orgs do
     resources :comments
+    resources :ratings
   end
   
   root 'welcome#index'
