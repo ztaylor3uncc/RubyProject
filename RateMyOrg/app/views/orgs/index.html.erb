@@ -7,7 +7,7 @@
     </div>
 
     <div class="is-centered">
-        <table>
+        <table id="OrgTable">
             <tr>
                 <th>Name</th>
                 <th>Description</th>
@@ -23,7 +23,7 @@
                     <td>"Rating"</td>
                     
                     <td><%= link_to 'Show', org_path(org) %></td>
-                    <td><%= link_to 'Edit', edit_org_path(org) %></td>
+                    <td class="Edit"><%= link_to 'Edit', edit_org_path(org) %></td>
                     <td><%= link_to 'Destroy',
                                     org_path(org),
                                     method: :delete,
