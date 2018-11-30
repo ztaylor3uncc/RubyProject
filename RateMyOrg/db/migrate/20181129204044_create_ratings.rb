@@ -1,10 +1,8 @@
 class CreateRatings < ActiveRecord::Migration[5.2]
-  def change
+  def up
     create_table :ratings do |t|
       t.integer :rate
-      t.references :org, foreign_key: true
-
-      t.timestamps
+      t.references :org, foreig_key: true
     end
   end
 end

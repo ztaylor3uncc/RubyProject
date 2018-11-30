@@ -28,4 +28,10 @@ ActiveRecord::Schema.define(version: 2018_11_29_204044) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer "rate"
+    t.integer "org_id"
+    t.index ["org_id"], name: "index_ratings_on_org_id"
+  end
+
 end

@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="body-container"> 
+    <% a = 0 %>
     <div class="is-centered title">
         <h1 id="header1">Organization Details</h1>
     </div>
@@ -35,7 +36,16 @@
                                 method: :delete,
                                 data: { confirm: 'Are you sure?' } %>
       </p>
+     <% end %>
+     
+    <h2>Rating:</h2>
+    <% @org.ratings.each do |rate| %>
+        <% a += rate %>
     <% end %>
+    <p>
+        <% puts a %>
+    </p>
+    
     
     <h2>Add A Comment:</h2>
     <%= form_for([@org, @org.comments.build]) do |f| %>
