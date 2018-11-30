@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="body-container"> 
-    <% a = 0 %>
     <div class="is-centered title">
         <h1 id="header1">Organization Details</h1>
     </div>
@@ -38,13 +37,9 @@
       </p>
      <% end %>
      
-    <h2>Rating:</h2>
-    <% @org.ratings.each do |rate| %>
-        <% a += rate %>
-    <% end %>
-    <p>
-        <% puts a %>
-    </p>
+     <h2>Ratings:</h2>
+     <% @org.ratings.each do |rate| %>
+     <% end %>
     
     
     <h2>Add A Comment:</h2>
