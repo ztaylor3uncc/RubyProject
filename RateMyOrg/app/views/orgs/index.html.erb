@@ -2,8 +2,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="body-container"> 
-    <% a = 0 %>
-    <% b = 1 %>
     <div class="is-centered title">
         <h1 id="header1">Organizations</h1>
     </div>
@@ -16,19 +14,27 @@
                 <th>Contact</th>
                 <th>Rating</th>
             </tr>
-            
             <% @orgs.each do |org| %>
+                <!-- do the math to find the rating -->
+                <% a = 0 %>
+                <% if org.ratings.present? %>
+                    <% b = 0 %>
+                <% else %>
+                    <% b = 1 %>
+                <% end %>
                 <% org.ratings.each do |rate| %>
-                    <% a += rate %>
+                    <% a += rate.rate.to_i %>
                     <% b += 1 %>
                 <% end %>
                 <tr>
                     <td><%= org.name %></td>
                     <td><%= org.description %></td>
                     <td><%= org.contact %></td>
+                    <!-- Display the rating -->
                     <td><%= a/b %>
+                    <!-- Reset the variables for the next org -->
                         <% a = 0 %>
-                        <% b = 0 %></td>
+                        <% b = 1 %></td>
                     
                     <td><%= link_to 'Show', org_path(org) %></td>
                     <td><%= link_to 'Edit', edit_org_path(org) %></td>

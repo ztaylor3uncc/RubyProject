@@ -8,8 +8,15 @@ class RatingsController < ApplicationController
         redirect_to org_path(@org)
     end
     
+    def destroy
+        @org = Org.find(params[:org_id])
+        @rating = @org.ratings.find(params[:id])
+        @rating.destroy
+        redirect_to org_path(@org)
+    end
+    
     private
         def rating_params
-            params.require(:rate)
+            params.require(:rating).permit(:rate)
         end
 end
