@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   get 'welcome/index'
-  
+
   resources :orgs do
     resources :comments
+    resources :ratings
   end
   
   root 'welcome#index'
