@@ -9,7 +9,8 @@ feature"User navigates back to the List of Orgs form" do
         expect(page).to have_field("Name")
         expect(page).to have_field("Description")
         expect(page).to have_field("Contact")
-        click_link "Back"
+        find("img[src*='back-c0c4459e32cd6731c0a90400645741f0cb5daa6356844880610fb7681999fafe.png']").click
+        #visit orgs_path
         expect(page).to have_content("Organizations")
     end
 end

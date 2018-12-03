@@ -7,7 +7,7 @@ scenario "User successfully creates a Organization" do
         fill_in "Name", with: "New Organizaiton Note"
         fill_in "Description", with: "This is a new Organization Note"
         fill_in "Contact", with: "Test Organization"
-        click_button "Save Orgs"
+        click_button "Submit"
         expect(page).to have_content("New Organizaiton Note")
         expect(page).to have_content("This is a new Organization Note")
         expect(page).to have_content("Test Organization")
