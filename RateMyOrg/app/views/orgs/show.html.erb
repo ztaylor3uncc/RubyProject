@@ -51,9 +51,11 @@
           </p>
           
           <!-- submit button for rating -->
-          <p>
-              <%= f.submit 'Rate' %>
-          </p>
+          <div class="move-this-too">
+              <p>
+                  <%= f.submit 'Rate' %>
+              </p>
+          </div>
           
         <% end %>
         
@@ -77,12 +79,11 @@
                   </div>
                   <%= f.text_field :body %>
               </p>
-        </div>
-              <p>
+              <p class="move-center">
                   <%= f.submit 'Comment' %>
               </p>
-              
-            <% end %>
+        <% end %>
+        </div>
         <div class="center-text">
             <%= link_to orgs_path do %>
                <%= image_tag "back.png"  %>
