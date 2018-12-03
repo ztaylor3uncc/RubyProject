@@ -23,6 +23,8 @@ body {
     background-color: #D3D3D3;
     height: 100%;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .body-container {
@@ -30,7 +32,6 @@ body {
     height: 100%;
     width: 100%;
     margin: 0 auto;
-    position: absolute;
 }
 
 #logo {
@@ -100,7 +101,6 @@ footer {
     width: 100%;
     text-align: center;
     bottom: 0;
-    position: absolute;
 }
 
 .foot-container {
@@ -113,4 +113,8 @@ footer {
 p {
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 15px;
+}
+
+.down {
+    position: absolute;
 }
