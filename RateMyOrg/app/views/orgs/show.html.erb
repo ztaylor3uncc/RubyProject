@@ -5,91 +5,88 @@
     <div class="is-centered title">
         <h1 id="header1">Organization Details</h1>
     </div>
-    <p>
-        <div class="label-heads">
-            <strong>Name:</strong>
-        </div>
-        <%= @org.name %>
-    </p>
-    
-    <p>
-        <div class="label-heads">
-            <strong>Description:</strong>
-        </div>
-        <%= @org.description %>
-    </p>
-    
-    <p>
-        <div class="label-heads">
-            <strong>Contact:</strong>
-        </div>
-        <%= @org.contact %>
-    </p>
-    
-    <!-- Ask user to leave a rating -->
-    <p>
-        <div class="label-heads">
-            <strong>Rate:</strong>
-        </div>
-        <% a = 0 %>
-        <% if @org.ratings.present? %>
-            <% b = 0 %>
-        <% else %>
-            <% b = 1 %>
+    <div class="des-container">
+        <p>
+            <div class="more-heads">
+                <strong>Name:</strong> <%= @org.name %>
+            </div>
+        </p>
+        
+        <p>
+            <div class="more-heads">
+                <strong>Description:</strong> <%= @org.description %>
+            </div>
+        </p>
+        
+        <p>
+            <div class="more-heads">
+                <strong>Contact:</strong> <%= @org.contact %>
+            </div>
+        </p>
+        
+        <!-- Ask user to leave a rating -->
+        <p>
+            <% a = 0 %>
+            <% if @org.ratings.present? %>
+                <% b = 0 %>
+            <% else %>
+                <% b = 1 %>
+            <% end %>
+            <% @org.ratings.each do |rate| %>
+                <% a += rate.rate.to_i %>
+                <% b += 1 %>
+            <% end %>
+            <div class="more-heads">
+                <strong>Rate:</strong> <%= a/b %>
+            </div>
+        </p>
+        
+        <!-- form to submit the rating -->
+        <%= form_for([@org, @org.ratings.build]) do |f| %>
+          <p>
+              <div class="additional-head" id="rate-space">
+                  <%= f.label :rate, 'Leave a Rating' %>
+              </div>
+              <%= f.number_field(:rate, in: 0..5) %>
+          </p>
+          
+          <!-- submit button for rating -->
+          <p>
+              <%= f.submit 'Rate' %>
+          </p>
+          
         <% end %>
-        <% @org.ratings.each do |rate| %>
-            <% a += rate.rate.to_i %>
-            <% b += 1 %>
-        <% end %>
-        <%= a/b %>
-    </p>
-    
-    <br>
-    
-    <!-- form to submit the rating -->
-    <%= form_for([@org, @org.ratings.build]) do |f| %>
-      <p>
-          <div class="label-heads">
-              <%= f.label :rate, 'Rate this Org' %>
-          </div>
-          <%= f.number_field(:rate, in: 0..5) %>
-      </p>
-      
-      <!-- submit button for rating -->
-      <p>
-          <%= f.submit %>
-      </p>
-      
-    <% end %>
-    
-    <!-- List all comments -->
-    <h2>Comments:</h2>
-    <% @org.comments.each do |comment| %>
-      <p>
+        
+        <!-- List all comments -->
+        <h2>Comments:</h2>
+        <% @org.comments.each do |comment| %>
+          <p>
           <strong>Anonymous:</strong>
-          <%= comment.body %>
-          <%= link_to 'Destroy', [comment.org, comment],
-                                method: :delete,
-                                data: { confirm: 'Are you sure?' } %>
-      </p>
-     <% end %>
-    
-    <h2>Add A Comment:</h2>
-    <%= form_for([@org, @org.comments.build]) do |f| %>
-      <p>
-          <div class="label-heads">
-              <%= f.label :body %>
-          </div>
-          <%= f.text_field :body %>
-      </p>
-      
-      <p>
-          <%= f.submit %>
-      </p>
-      
-    <% end %>
-    
-    <p>
-        <%= link_to 'Back', orgs_path %>
-    </p>
+            <%= comment.body %>
+            <%= link_to [comment.org, comment], method: :delete, data: { confirm: 'Are you sure you want delete this comment?' } do %>
+                <%= image_tag("delete.png") %>
+            <% end %>
+          </p>
+         <% end %>
+        </div>
+        <div class="form-container">
+            <%= form_for([@org, @org.comments.build]) do |f| %>
+              <p>
+                  <div class="label-heads">
+                      <%= f.label 'Leave a Comment' %>
+                  </div>
+                  <%= f.text_field :body %>
+              </p>
+        </div>
+              <p>
+                  <%= f.submit 'Comment' %>
+              </p>
+              
+            <% end %>
+        <div class="center-text">
+            <%= link_to orgs_path do %>
+               <%= image_tag "back.png"  %>
+            <% end %>
+        </div>
+    </div>
 </div>

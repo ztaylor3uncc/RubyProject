@@ -27,9 +27,10 @@ body {
 
 .body-container {
     background-color: white;
-    height: 100vh;
-    width: 90%;
+    height: 100%;
+    width: 100%;
     margin: 0 auto;
+    position: absolute;
 }
 
 #logo {
@@ -94,9 +95,9 @@ form.example::after {
 }
 
 footer {
-    border-top: 1px solid #D3D3D3;
+    border-top: 1px solid #006338;
     background-color: white;
-    width: 90%;
+    width: 100%;
     text-align: center;
     bottom: 0;
     position: absolute;

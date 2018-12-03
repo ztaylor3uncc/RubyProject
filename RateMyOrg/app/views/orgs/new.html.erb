@@ -5,33 +5,38 @@
     <div class="is-centered title">
         <h1 id="header1">Adding Organization</h1>
     </div>
+    <div class="form-container">
+        <%= form_for :orgs, url: orgs_path do |f| %>
+            <p>
+                <div class="label-heads">
+                    <%= f.label :name %><br>
+                </div>
+                <%= f.text_field :name %>
+            </p>
+            
+            <p>
+                <div class="label-heads">
+                    <%= f.label :description %><br>
+                </div>
+                <%= f.text_field :description %>
+            </p>
+            
+            <p>
+                <div class="label-heads">
+                    <%= f.label :contact %><br>
+                </div>
+                <%= f.text_field :contact %>
+            </p>
+            
+            <p>
+                <%= f.submit 'Submit' %>
+            </p>
+        <% end %>
+    </div>
     
-    <%= form_for :orgs, url: orgs_path do |f| %>
-        <p>
-            <div class="label-heads">
-                <%= f.label :name %><br>
-            </div>
-            <%= f.text_field :name %>
-        </p>
-        
-        <p>
-            <div class="label-heads">
-                <%= f.label :description %><br>
-            </div>
-            <%= f.text_field :description %>
-        </p>
-        
-        <p>
-            <div class="label-heads">
-                <%= f.label :contact %><br>
-            </div>
-            <%= f.text_field :contact %>
-        </p>
-        
-        <p>
-            <%= f.submit %>
-        </p>
-    <% end %>
-    
-    <%= link_to 'Back', orgs_path %>
+    <div class="center-text">
+        <%= link_to orgs_path do %>
+           <%= image_tag "back.png"  %>
+        <% end %>
+    </div>
 </div>

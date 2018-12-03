@@ -5,51 +5,54 @@
   <div class="is-centered title">
     <h1 id="header1">Editing Organization</h1>
   </div>
-  
-  <%= form_for @org do |f| %>
-   
-    <% if @org.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@org.errors.count, "error") %> prohibited
-          this article from being saved:
-        </h2>
-        <ul>
-          <% @org.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-   
-    <p>
-      <div class="label-heads">
-        <%= f.label :name %><br>
-      </div>
-      <%= f.text_field :name %>
+  <div class="form-container">
+    <%= form_for @org do |f| %>
+     
+      <% if @org.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@org.errors.count, "error") %> prohibited
+            this article from being saved:
+          </h2>
+          <ul>
+            <% @org.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+     
+      <p>
+        <div class="label-heads">
+          <%= f.label :name %><br>
+        </div>
+        <%= f.text_field :name %>
+        
+      </p>
+     
+      <p>
+        <div class="label-heads">
+          <%= f.label :description %><br>
+        </div>
+        <%= f.text_field :description %>
+      </p>
       
-    </p>
-   
-    <p>
-      <div class="label-heads">
-        <%= f.label :description %><br>
-      </div>
-      <%= f.text_field :description %>
-    </p>
-    
-    <p>
-      <div class="label-heads">
-        <%= f.label :contact %><br>
-      </div>
-      <%= f.text_field :contact %>
-    </p>
-   
-    <p>
-      <%= f.submit %>
-    </p>
-   
-  <% end %>
-   
-  <%= link_to 'Back', orgs_path %>
-
+      <p>
+        <div class="label-heads">
+          <%= f.label :contact %><br>
+        </div>
+        <%= f.text_field :contact %>
+      </p>
+     
+      <p>
+        <%= f.submit 'Update' %>
+      </p>
+     
+    <% end %>
+  </div>
+  <div class="center-text">
+    <%= link_to orgs_path do %>
+      <%= image_tag "back.png"  %>
+    <% end %>
+  </div>
 </div>
