@@ -27,9 +27,9 @@
                     <% b += 1 %>
                 <% end %>
                 <tr>
-                    <td><%= org.name %></td>
-                    <td><%= org.description %></td>
-                    <td><%= org.contact %></td>
+                    <td width="30px"><%= org.name %></td>
+                    <td width="30px"><%= org.description %></td>
+                    <td width="30px"><%= org.contact %></td>
                     <!-- Display the rating -->
                     <td><%= a/b %>
                     <!-- Reset the variables for the next org -->
@@ -56,15 +56,9 @@
             <%= link_to 'Add Organization', new_org_path %>
         </div>
     </table>
-    <div class="center-text">
+    <div class="center-text drop">
         <%= link_to root_path do %>
            <%= image_tag "back.png"  %>
         <% end %>
     </div>
-    <footer>
-        <div class="foot-container">
-            <p>RUBY WARRIORS Copyright © 2018. UNC CHARLOTTE</p>
-        </div>
-    </footer>
 </div>
-

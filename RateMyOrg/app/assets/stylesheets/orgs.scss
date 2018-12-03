@@ -22,22 +22,28 @@
     margin: 0;
 }
 
+html {
+    height: 100%;
+}
+
 #add {
     text-align: center;
 }
 
 body {
     background-color: white;
-    height: 100%;
-    margin: 0;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .body-container {
     background-color: white;
-    height: 100%;
     width: 100%;
     margin: 0 auto;
-    position: absolute;
+    position: relative;
+    flex: 1;
 }
 
 th {
@@ -49,26 +55,11 @@ th {
     padding-bottom: 15px;
 }
 
-footer {
-    border-top: 1px solid #006338;
-    background-color: white;
-    width: 100%;
-    text-align: center;
-    bottom: 0;
-    position: absolute;
-}
-
-.foot-container {
-    padding-top: 5px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
 td {
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 17px;
     padding-bottom: 15px;
+    padding-left: 20px;
 }
 
 .label-heads {
@@ -151,7 +142,6 @@ input[type=number] {
 
 img {
     width: 25px;
-    padding-right: 20px;
 }
 
 .move-center {
@@ -162,4 +152,16 @@ img {
 .move-this-too {
     margin-left: 43.9%;
     margin-right: 48%;
+}
+
+.drop {
+    padding-bottom: 20px;
+}
+
+.squeeze {
+    width: 70%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
