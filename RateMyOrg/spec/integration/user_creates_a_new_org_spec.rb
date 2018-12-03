@@ -1,17 +1,7 @@
 require 'rails_helper.rb'
 
-feature"User adds a Organization" do
-    scenario "User successfully navigates to the new Org page from the List of Orgs page" do
-        visit orgs_path
-        expect(page).to have_content("Organizations")
-        click_link "Add Organization"
-        expect(page).to have_content("Adding Organization")
-        expect(page).to have_field("Name")
-        expect(page).to have_field("Description")
-        expect(page).to have_field("Contact")
-    end
-    
-    scenario "User successfully creates a Organization" do
+feature"User creates a new Organization" do
+scenario "User successfully creates a Organization" do
         visit new_org_path
         expect(page).to have_content("Adding Organization")
         fill_in "Name", with: "New Organizaiton Note"
@@ -23,3 +13,4 @@ feature"User adds a Organization" do
         expect(page).to have_content("Test Organization")
     end
 end
+
