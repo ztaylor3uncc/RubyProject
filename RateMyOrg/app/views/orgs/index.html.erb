@@ -3,7 +3,7 @@
 
 <div class="body-container"> 
     <div class="is-centered title">
-        <h1 id="header1">Organizations</h1>
+        <h1 id="header1"><%= link_to 'Organizations', orgs_path, class: "nothing" %></h1>
     </div>
 
     <div class="is-centered">
@@ -58,7 +58,7 @@
     </table>
     <div class="center-text drop">
         <%= link_to root_path do %>
-           <%= image_tag "back.png"  %>
+           <%= image_tag("back.png", alt: "back")  %>
         <% end %>
     </div>
 </div>
